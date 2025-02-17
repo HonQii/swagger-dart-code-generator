@@ -13,6 +13,7 @@ GeneratorOptions _$GeneratorOptionsFromJson(Map json) => GeneratorOptions(
       withConverter: json['with_converter'] as bool? ?? true,
       ignoreHeaders: json['ignore_headers'] as bool? ?? false,
       separateModels: json['separate_models'] as bool? ?? false,
+      dateSerializer: json['date_serializer'] as String?,
       classesWithNullabeLists:
           (json['classes_with_nullabe_lists'] as List<dynamic>?)
                   ?.map((e) => e as String)
@@ -116,6 +117,7 @@ Map<String, dynamic> _$GeneratorOptionsToJson(GeneratorOptions instance) =>
       'input_urls': instance.inputUrls,
       'nullable_models': instance.nullableModels,
       'separate_models': instance.separateModels,
+      'date_serializer': instance.dateSerializer,
       'use_required_attribute_for_headers':
           instance.useRequiredAttributeForHeaders,
       'ignore_headers': instance.ignoreHeaders,
