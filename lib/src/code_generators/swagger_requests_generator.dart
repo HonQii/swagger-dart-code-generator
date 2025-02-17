@@ -509,7 +509,9 @@ class SwaggerRequestsGenerator extends SwaggerGeneratorBase {
           if (hasOptionalBody && !isUrlencoded)
             'optionalBody': refer(true.toString()),
           if (isUrlencoded)
-            'headers': refer('{contentTypeKey: formEncodedHeaders}')
+            'headers': refer('{contentTypeKey: formEncodedHeaders}'),
+          if (options.dateSerializer != null)
+            'dateSerializer': refer(options.dateSerializer!)
         },
       ),
       if (isUrlencoded)
